@@ -3,7 +3,13 @@ require_relative 'config/environment'
 class App < Sinatra::Base
 
   get "/" do
-    '<h1>Live Life Bruhh </h1>'
+    erb :index
+  end
+
+  post "/" do
+    @user = {
+      name: "#{params["frame"]}"
+      }
   end
 
 end
